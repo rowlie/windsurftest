@@ -85,6 +85,7 @@ export default function Home(): React.JSX.Element {
               data-netlify="true"
               onSubmit={handleSubmit}
             >
+              <input type="hidden" name="form-name" value="contact" />
               <div>
                 <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
                   Name
@@ -130,7 +131,6 @@ export default function Home(): React.JSX.Element {
               >
                 Send Message
               </button>
-              <input type="hidden" name="form-name" value="contact" />
             </form>
           ) : (
             <div className="text-center p-8 bg-green-50 rounded-lg">
