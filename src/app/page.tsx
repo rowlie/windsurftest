@@ -7,8 +7,8 @@ export default function Home(): React.JSX.Element {
   const [isSubmitted, setIsSubmitted] = useState<boolean>(false);
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>): void => {
-    e.preventDefault();
-    setIsSubmitted(true);
+    // Let the form submit naturally to Netlify
+    // The form will redirect to the success page
   };
   return (
     <div className="min-h-screen bg-white">
@@ -83,6 +83,7 @@ export default function Home(): React.JSX.Element {
               name="contact"
               method="POST"
               data-netlify="true"
+              action="/success"
               onSubmit={handleSubmit}
             >
               <input type="hidden" name="form-name" value="contact" />

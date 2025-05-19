@@ -1,12 +1,13 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'standalone',
+  // Use export instead of standalone for Netlify
+  output: 'export',
   images: {
     unoptimized: true,
   },
-  webpack: (config) => {
-    config.resolve.extensions = ['.js', '.jsx', '.ts', '.tsx', ...config.resolve.extensions];
-    return config;
+  // Disable server components since we're using static export
+  experimental: {
+    appDir: true,
   },
 }
 
